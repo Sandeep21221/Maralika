@@ -1,0 +1,7 @@
+{
+  "name": "maralika",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
