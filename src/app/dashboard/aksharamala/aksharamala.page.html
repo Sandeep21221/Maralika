@@ -1,48 +1,25 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button menuId="first"></ion-menu-button>
-    </ion-buttons>
-
-    <ion-title>Aksharamala</ion-title>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-button>
+      <ion-title>Aksharamala</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>  
   
-  <ion-row class="dashboard_div vertical-align-content" style="background-image: url('assets/images/itj_mobile_banner_new.jpg');width: 100%;">
-  <ion-row style="width: 100%;padding-top: 70px;">
-    <ion-title class="ion-text-center" style="font-weight: 600;">
-      Search Course
-    </ion-title>
-    <ion-title class="ion-text-center" style="font-weight: 300;font-size: 16px;">
-      Find Your Course  
-    </ion-title>
-  </ion-row>
-</ion-row>
-
 <div style="margin-top: 15px;"> </div>
-
-  <!-- <ion-card>
-    <img src="assets/images/itj_mobile_banner_new.jpg" />
-    <ion-card-header>
-      <ion-card-title>Course Name</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-        <ion-button color="tertiary" routerLink='/dashboard'>Start Course</ion-button>
-    </ion-card-content>
-  </ion-card> -->
-  
   <ion-card *ngFor="let co of course.lesson_info">
     <!-- <img src="https://www.maralika.org/{{co.co_cover_image}}"/> -->
     <ion-card-header>
       <ion-card-title>{{co.co_section_title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-    <ion-button>
+    <p (click)="lessons_course(co.ls_id)"
+    [routerLink]="['/co.co_title.toLowerCase()', co.ls_id]">
       {{co.co_section_intro}}
-    </ion-button>
+    </p>
   </ion-card-content>
   </ion-card>
 </ion-content>

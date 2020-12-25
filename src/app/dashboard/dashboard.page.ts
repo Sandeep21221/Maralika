@@ -13,8 +13,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 interface ILesson{
   std_id:number,
-  co_id:number,
-  is_id:string
+  co_id:number
 }
 @Component({
   selector: 'app-dashboard',
@@ -30,7 +29,7 @@ export class DashboardPage implements OnInit {
   lesson:ILesson={
     std_id:6,
     co_id:185,
-    is_id:""
+    
   }
   lessondata: any;
   
@@ -57,13 +56,6 @@ export class DashboardPage implements OnInit {
 
       });
     }
-    // async lessonDetails() {
-    // this.authService.lessonDetails(this.lesson)
-    //     .subscribe((res: any) => {
-    //     this.course = res;
-
-    //   });
-    // }
     lessons(co_id:number){
       this.lesson.co_id=co_id;
       this.authService.lessonDetails(this.lesson)
@@ -71,12 +63,7 @@ export class DashboardPage implements OnInit {
         this.lessondata = res;
 
       });
-
-      
-      
     }
-
-    
 
 }
 

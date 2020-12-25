@@ -52,7 +52,10 @@ mycourse(postData: any): Observable<any> {
 lesson(postData: any): Observable<any> {
     return this.httpService.post('lesson', postData);
 }
-
+// #ls_id
+lesson_cou(postData: any): Observable<any> {
+    return this.httpService.post('lesson_cou', postData);
+}
 instructor(postData: any): Observable<any> {
     return this.httpService.post('employer_login', postData);
 }

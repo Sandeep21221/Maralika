@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AksharamalaPage
+  },
+  {
+    path: 'akshcourse',
+    loadChildren: () => import('./akshcourse/akshcourse.module').then( m => m.AkshcoursePageModule)
   }
 ];
 

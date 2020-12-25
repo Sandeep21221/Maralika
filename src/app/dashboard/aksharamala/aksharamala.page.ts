@@ -16,23 +16,19 @@ import { environment } from 'src/environments/environment';
 export class AksharamalaPage implements OnInit {
   
   lesson:ILesson={
-    co_id:null,
-    ls_id:null
-  };
-  xyz=0;
+    co_id:185,
+    ls_id:185
+  }
   course: any = [];
   displayJobseekerData: any;
+  lessondata: any;
  
   constructor(private httpClient:HttpClient, private authService: AuthService, private menu: MenuController, private router: Router,
     private statusBar: StatusBar, private wp: WordpressService, private loadingCtrl: LoadingController,
     private toastService: ToastService, public navCtrl: NavController,private route: ActivatedRoute) {
       
-      this.route.paramMap.subscribe( params => {
-        this.xyz = parseInt(params.get('id'));
-        
-    
-      });
       this.lessonDetails();
+
     }
     
     ngOnInit() {
@@ -42,21 +38,23 @@ export class AksharamalaPage implements OnInit {
       
      }    
     async lessonDetails() {
-     var lesson1={
-        co_id:this.xyz,
-        ls_id:this.xyz
-  
-    } as ILesson;
     this.authService.lessonDetails(this.lesson)
         .subscribe((res: any) => {
           this.course = res;
 
         });
     }
+    lessons_course(ls_id:number){
+      this.lesson.co_id=ls_id;
+      this.authService.lesson_cou(this.lesson)
+        .subscribe((res: any) => {
+        this.lessondata = res;
+
+      });
+    }
 
 }
 interface ILesson{
-  ls_id:number
   co_id:number
-
+  ls_id:number
 }

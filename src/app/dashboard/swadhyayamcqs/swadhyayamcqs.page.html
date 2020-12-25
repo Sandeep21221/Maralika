@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngFor="let co of course.lesson_info">
+    <!-- <img src="https://www.maralika.org/{{co.co_cover_image}}"/> -->
+    <ion-card-header>
+      <ion-card-title>{{co.co_section_title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    <p>
+      {{co.co_section_intro}}
+    </p>
+  </ion-card-content>
+  </ion-card>
 </ion-content>
