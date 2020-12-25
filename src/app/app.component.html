@@ -1,3 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" menu-id="main" type="overlay" class="my-custom-menu">
+      <ion-header>
+        <ion-toolbar color="primary">
+
+           <img class="ion-text-center" style="height: 100%;width: 30%;" src="assets/images/user.png" class="smallLogo"/>
+
+           <ion-title class="ion-text-center" style="padding-bottom:10px;"><span style="font-weight: 300!important;">Hi,</span> {{ displayJobseekerData?.std_fullname }} </ion-title>
+           <ion-label class="ion-text-center" style="padding-bottom:10px;display: block;">{{ displayJobseekerData?.std_email }}</ion-label>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="selectedIndex = i" routerDirection="root" routerLink="{{p.url}}"  lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon name="{{ p.icon }}" color="tertiary" class="menu_icon"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+          <ion-menu-toggle  (click)="logout_now($event);" auto-hide="false">
+          <ion-item>
+            <ion-icon name="log-out" color="tertiary" class="menu_icon"></ion-icon> Logout
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+
 </ion-app>

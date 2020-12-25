@@ -1,0 +1,60 @@
+<br><br><br><br>
+  <ion-content class="ion-padding">
+  <img class="ion-text-center" src="assets/images/logo.png" class="smallLogo"/>
+    <br><br><br><br>
+  <ion-segment color="primary" [(ngModel)]="yudsegment">
+    <ion-segment-button value="jobseeker">
+      Student
+    </ion-segment-button>
+    <ion-segment-button value="employer">
+      Instructor
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="yudsegment">
+    <ion-list *ngSwitchCase="'jobseeker'">
+      <h3 class="ion-text-center">Student Log In</h3>
+
+        <form>
+        <ion-list>
+        <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input autocomplete="off" type="text" name="username" [(ngModel)]="jobseeker.username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="jobseeker.password"></ion-input>
+        </ion-item>
+
+        <ion-item lines='none'>
+        <a routerLink='/jobseeker-register'>Create Account</a>
+        </ion-item>
+        </ion-list>
+        <ion-button expand="block" share="round" color="primary" (click)="login()">Sign In</ion-button>
+        </form>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'employer'">
+      <h3 class="ion-text-center">Instructor</h3>
+
+        <form>
+        <ion-list>
+        <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input autocomplete="off" type="text" name="emp_username" [(ngModel)]="employer.emp_username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input autocomplete="off" type="password" name="emp_password" [(ngModel)]="employer.emp_password"></ion-input>
+        </ion-item>
+
+        <ion-item lines='none'>
+        <a routerLink='/employer-register'>Create Account</a>
+        </ion-item>
+        </ion-list>
+        <ion-button expand="block" share="round" color="primary" (click)="instructor()">Sign In</ion-button>
+        </form>
+    </ion-list>
+  </div>
+  </ion-content>

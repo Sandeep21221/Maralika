@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="first"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<div style="margin-top: 15px;"> </div>
+
+<ion-content>
+  <ion-title class="ion-text-center" style="font-weight: 600;">
+    Courses
+  </ion-title>
+  <ion-card *ngFor="let co of course.data">
+    <ion-card-content>
+    <img class="image" src="https://www.maralika.org/{{co.co_cover_image}}"/>
+      <ion-card-header class="head">{{co.co_title}}</ion-card-header>
+    </ion-card-content>
+    <div class="ion-text-center" >
+      <ion-button class="button"color="primary" 
+      (click)="lessons(co.co_id)" 
+      [routerLink]="['/dashboard',co.co_title.toLowerCase(), co.co_id]">Start Course</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

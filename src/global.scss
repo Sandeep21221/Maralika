@@ -24,3 +24,59 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ionic-selectable{
+    .searchbar-input-container{
+        .searchbar-input{
+            border-radius: 30px !important;
+        }
+    }
+}
+html{
+    font-size:16px!important;	
+  }
+  input{
+    font-size: 1rem;
+  }
+  h1{
+    font-size:1.2rem;
+  }
+
+.vertical-align-content > *
+{
+     display: flex!important;
+     align-content: center!important;
+     align-items: center!important;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: 0px!important;
+    margin-top: 5px!important;
+    position: relative!important;
+}
+// ion-slide.swiper-slide {
+//     align-items: flex-start;
+// }
+
+ .swiper-slide img {
+    height: 90px!important;
+    width: auto!important;
+}
+.hr {
+    border-bottom: 1px solid #ededed;
+    margin: auto;
+    width: 95%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  ion-row{ ion-card{ width:100% !important; margin-left: 0 !important; margin-right: 0 !important; img{ width:100%; } } }
+
+  .add-space{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif!important;
+
+  }

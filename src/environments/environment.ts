@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  apiUrl: 'https://www.maralika.org/api/Mobile_api/',
+  siteUrl: 'https://www.maralika.org/'
+  
+
 };
 
 /*

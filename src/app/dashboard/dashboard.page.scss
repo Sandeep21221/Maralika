@@ -1,0 +1,26 @@
+.image{
+    border-radius: 8px;
+    text-align: center;
+    img {
+        width: 200px;
+        height: 400px;
+        object-fit: cover;
+      }
+}
+.head{
+    text-align: center;
+    background-color: rgb(106 33 158 / 66%);
+    padding: 5px 10px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 18px;
+    color: white;
+}
+.button{
+    margin-bottom: 18px;
+
+}
